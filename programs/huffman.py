@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
 import heapq
 
 
@@ -56,7 +60,7 @@ def huffman_decode(encoded_data, codes):
 if __name__ == "__main__":
     input_string = "Hello Word!"
     frequency = {}
-
+    # Создание словаря с частотами букв
     for char in input_string:
         if char in frequency:
             frequency[char] += 1
@@ -68,10 +72,8 @@ if __name__ == "__main__":
 tree = procedurehuffman(frequency)
 print(tree)
 code = huffman_codes(tree, dict())
-print("code", code)
 encoded_data = huffman_encode(input_string, code)
 decoded_data = huffman_decode(encoded_data, code)
 
-print(f"Original Data: {input_string}")
-print(f"Encoded Data: {encoded_data}")
-print(f"Decoded Data: {decoded_data}")
+print(f"Encoded: {encoded_data}")
+print(f"Decoded: {decoded_data}")
